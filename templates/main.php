@@ -43,19 +43,20 @@
     <?php
     $index = 0;
     foreach ($tasks as $task) :
-      if (!$show_complete_tasks && $tasks[$index]['status']) :
+      if (!$show_complete_tasks && $task['status']) :
         $index++;
         continue;
       else :
     ?>
-        <tr class="tasks__item task <?php if ($tasks[$index]['status']) : ?>task--completed<?php endif; ?>">
+        <tr class="tasks__item task <?php if ($task['status']) : ?>task--completed<?php endif; ?>
+    <?php if (get_diff_time($task['date']) <= 24) : ?>task--important<?php endif; ?>">
           <td class="task__select">
             <label class="checkbox task__checkbox">
               <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="<?= $index ?>">
-              <span class="checkbox__text"><?= $tasks[$index]['title'] ?></span>
+              <span class="checkbox__text"><?= $task['title'] ?></span>
             </label>
           </td>
-          <td class="task__date"><?= $tasks[$index]['date'] ?></td>
+          <td class="task__date"><?= $task['date'] ?></td>
         </tr>
     <?php endif;
       $index++;

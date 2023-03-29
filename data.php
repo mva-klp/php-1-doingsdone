@@ -6,7 +6,7 @@ $categories = ["Входящие", "Учеба", "Работа", "Домашни
 $tasks = [
   [
     "title" => "Собеседование в IT компании",
-    "date" => "01.12.2019",
+    "date" => "31.03.2023",
     "category" => $categories[2],
     "status" => false
   ],

@@ -7,3 +7,12 @@ function number_of_tasks(array $task_list, $task_title)
   }
   return 0;
 }
+
+function get_diff_time($date)
+{
+  $task_date = strtotime($date);
+  $cur_date = time();
+  $diff = $task_date - $cur_date;
+  $hours = floor($diff / 3600);
+  return $hours;
+}
