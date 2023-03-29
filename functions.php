@@ -8,7 +8,7 @@ function number_of_tasks(array $task_list, $task_title)
   return 0;
 }
 
-function get_diff_time($date)
+function get_diff_hours($date)
 {
   $task_date = strtotime($date);
   $cur_date = time();

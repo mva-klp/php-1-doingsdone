@@ -49,7 +49,7 @@
       else :
     ?>
         <tr class="tasks__item task <?php if ($task['status']) : ?>task--completed<?php endif; ?>
-    <?php if (get_diff_time($task['date']) <= 24) : ?>task--important<?php endif; ?>">
+    <?php if (get_diff_hours($task['date']) <= 24) : ?>task--important<?php endif; ?>">
           <td class="task__select">
             <label class="checkbox task__checkbox">
               <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="<?= $index ?>">
